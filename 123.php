@@ -1,6 +1,6 @@
 <HTML>
     <HEAD>
-        <TITLE>表单数据传递</TITLE>
+        <TITLE>计算</TITLE>
     </HEAD>
     <BODY>
     <?php
@@ -15,27 +15,30 @@
 		$addend3=0;
         $method ='+';
     }
-   
+	
+   $huilv ='6.8';
+ 
      switch ($method){
         case '+':
-			$result0 = ($addend1 + 90 + 82 ) / 6.8;
-            $result = ($addend1 + 90 + 130 ) / 6.8;
-			$result2 = ($addend1 + 90 + 150 ) / 6.8;
-			$result3 = ($addend1 + 90 + 175 ) / 6.8;
-			$resultS = ($addend1 + 90 + 90 ) / 6.8;
-
-			$result4 = ($addend1 + $addend2 + 180 + 150 + 31) / 6.8;
-			$result5 = ($addend1 + $addend2 + 180 + 150 + 62 ) / 6.8;
-			$result6 = ($addend1 + $addend2 + 180 + 150 + 93) / 6.8;
-			$result7 = ($addend1 + $addend2 + 180 + 150 + 93 + 31) / 6.8;
-			$result8 = ($addend1 + $addend2 + 180 + 150 + 93 + 31 + 31 ) / 6.8;
-			$result9 = ($addend1 + $addend2 + 180 + 150 + 93 + 31 + 31 +31  ) / 6.8;
-			$result10 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 ) / 6.8;
-			$result11 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31) / 6.8;
-			$result12 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31 + 31 ) / 6.8;
-			$result13 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31 + 31 + 31  ) / 6.8;
+			$result0 = ($addend1 + 90 + 82 ) / $huilv;
+			$resultS = ($addend1 + 90 + 90 ) / $huilv; /* sb */ 
 			
+            $result = ($addend1 + 90 + 130 ) / $huilv; 
+			$result2 = ($addend1 + 90 + 150 ) / $huilv; 
+			$result3 = ($addend1 + 90 + 175 ) / $huilv; 
+			 
+			$result6 = ($addend1 + $addend2 + 180 + 150 + 93) / $huilv; /* 2.0 kg */ 
+			$result7 = ($addend1 + $addend2 + 180 + 274 ) / $huilv; /* 2.5 kg */ 
+			$result8 = ($addend1 + $addend2 + 180 + 305 ) / $huilv; /* 3 kg */ 
+			$result9 = ($addend1 + $addend2 + 180 + 336 ) / $huilv; /* 3.5 kg */ 
+			$result4 = ($addend1 + $addend2 + 180 + 150 + 31) / $huilv;  /* 1.0 kg */ 
+			$result5 = ($addend1 + $addend2 + 180 + 150 + 62 ) / $huilv; /* 1.5 kg */ 
 			
+			$result11 = ($addend1 + $addend2 + $addend3 + 270 + 274 ) / $huilv; /* 2.5 kg */ 
+			$result12 = ($addend1 + $addend2 + $addend3 + 270 + 305 ) / $huilv; /* 3.0 kg */ 
+			$result13 = ($addend1 + $addend2 + $addend3 + 270 + 336  ) / $huilv; /* 3.5 kg */ 
+			$result10 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 ) / $huilv; /* 2.0 kg */ 
+			$result14 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 62 ) / $huilv; /* 1.5 kg */ 
 			
             break;
 			
@@ -47,20 +50,21 @@
 <form name="form1" method="post" action="#">
      <input type="hidden" name="tag" size="4" value="1">   <br><br>
 	 
-     <input type="text" name="addend1" size="4" value="<?php echo $addend1;?>">
+     <input type="text" name="addend1" size="4" style="width:66px;height:36px;" value="<?php echo $addend1;?>">
 	 
      <select name="method">
         <option value='+'<?php if($method=='+')?>>+</option>
      </select>
 	 
-	 <input type="text" name="addend2" size="4" value="<?php echo $addend2;?>">
+	 <input type="text" name="addend2" size="4" style="width:66px;height:36px;" value="<?php echo $addend2;?>">
 	 
 	 <select name="method">
         <option value='+'<?php if($method=='+')?>>+</option>
      </select>
 	 
-	 <input type="text" name="addend3" size="4" value="<?php echo $addend3;?>">
+	 <input type="text" name="addend3" size="4" style="width:66px;height:36px;" value="<?php echo $addend3;?>">
 
+	 <br><br><input type="submit" name="button1" value="计算">
 	 
     <br><br>--------------1--------------<br><br>
 	T = <?php echo $result0;?><br>
@@ -69,19 +73,24 @@
     2 = <?php echo $result2;?><br>
 	3 = <?php echo $result3;?><br>
 	<br><br>--------------2--------------<br><br>
-	1.0 kg = <?php echo $result4;?><br>
+	
 	1.5 kg = <?php echo $result5;?><br><br>
 	2.0 kg  = <?php echo $result6;?><br>
 	2.5 kg  = <?php echo $result7;?><br>
 	3.0 kg  = <?php echo $result8;?><br>
 	3.5 kg  = <?php echo $result9;?><br>
+	1.0 kg = <?php echo $result4;?><br>
+	
 	<br><br>--------------3--------------<br><br>
-	2.0 kg  = <?php echo $result10;?><br>
+	
+	
 	2.5 kg  = <?php echo $result11;?><br>
 	3.0 kg  = <?php echo $result12;?><br>
-	3.5 kg  = <?php echo $result13;?><br>
+	3.5 kg  = <?php echo $result13;?><br><br>
+	2.0 kg  = <?php echo $result10;?><br>
+	1.5 kg  = <?php echo $result14;?><br>
 	
-    <br><input type="submit" name="button1" value="计算">
+    
 </form>
     </BODY>
 </HTML>
