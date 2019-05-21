@@ -33,7 +33,7 @@
 			$result10 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 ) / 6.8;
 			$result11 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31) / 6.8;
 			$result12 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31 + 31 ) / 6.8;
-			$result13 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31 + 31 +31  ) / 6.8;
+			$result13 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31 + 31 + 31  ) / 6.8;
 			
 			
 			
@@ -45,7 +45,7 @@
 ?>
 <meta charset="utf-8">
 <form name="form1" method="post" action="#">
-     <input type="hidden" name="tag" size="4" value="1">   
+     <input type="hidden" name="tag" size="4" value="1">   <br><br>
 	 
      <input type="text" name="addend1" size="4" value="<?php echo $addend1;?>">
 	 
