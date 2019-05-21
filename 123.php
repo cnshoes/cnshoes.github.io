@@ -12,6 +12,7 @@
     }else{
         $addend1=0;
         $addend2=0;
+		$addend3=0;
         $method ='+';
     }
    
@@ -29,7 +30,6 @@
 			$result7 = ($addend1 + $addend2 + 180 + 150 + 93 + 31) / 6.8;
 			$result8 = ($addend1 + $addend2 + 180 + 150 + 93 + 31 + 31 ) / 6.8;
 			$result9 = ($addend1 + $addend2 + 180 + 150 + 93 + 31 + 31 +31  ) / 6.8;
-			
 			$result10 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 ) / 6.8;
 			$result11 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31) / 6.8;
 			$result12 = ($addend1 + $addend2 + $addend3 + 270 + 150 + 93 + 31 + 31 ) / 6.8;
@@ -46,7 +46,7 @@
 <meta charset="utf-8">
 <form name="form1" method="post" action="#">
      <input type="hidden" name="tag" size="4" value="1">   
-<br>	 
+	 
      <input type="text" name="addend1" size="4" value="<?php echo $addend1;?>">
 	 
      <select name="method">
@@ -54,12 +54,13 @@
      </select>
 	 
 	 <input type="text" name="addend2" size="4" value="<?php echo $addend2;?>">
+	 
 	 <select name="method">
         <option value='+'<?php if($method=='+')?>>+</option>
      </select>
 	 
 	 <input type="text" name="addend3" size="4" value="<?php echo $addend3;?>">
-	 
+
 	 
     <br><br>--------------1--------------<br><br>
 	T = <?php echo $result0;?><br>
