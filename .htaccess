@@ -1,3 +1,0 @@
-RewriteCond %{HTTP:Accept-Language} ^zh-cn.*$ [NC,OR]
-RewriteCond %{HTTP:Accept-Language} ^zh.*$ [NC]
-RewriteRule ^/?$ http://www.biadu.com/ [R=301,L]
